@@ -9,7 +9,9 @@ public with sharing class OpportunityTriggerHandler {
             if (opp.Amount < 5000) {
                 opp.addError('Opportunity amount must be greater than 5000');
             }
+           
     }
+    
 }
 
 public static void preventOppDeletion(List<Opportunity> opportunities) {
@@ -26,6 +28,7 @@ public static void preventOppDeletion(List<Opportunity> opportunities) {
             opp.addError('Cannot delete closed opportunity for a banking account that is won');
         }
     }
+   
 }
  public static void updateOpp (List<Opportunity> opportunities){
     //loop through opp list and gather the Account Ids from the Opp and add to Set for unique Ids.
@@ -47,6 +50,6 @@ public static void preventOppDeletion(List<Opportunity> opportunities) {
     
         }
     }
-    
+     
 }
 }

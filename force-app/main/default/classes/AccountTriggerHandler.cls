@@ -47,6 +47,11 @@ public with sharing class AccountTriggerHandler {
         contactList.add(contact);
  
    }
-insert contactList;
+   Database.DMLOptions dml = new DataBase.DMLOptions();
+   dml.DuplicateRuleHeader.AllowSave = true;
+   dml.DuplicateRuleHeader.RunAsCurrentUser = false;
+
+   Database.insert(contactList, dml);
 }
-}   
+}
+  

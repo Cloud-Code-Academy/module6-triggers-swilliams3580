@@ -8,5 +8,6 @@ trigger AccountTrigger on Account (before insert, after insert) {
 }
 if(Trigger.isAfter && Trigger.isInsert){
     AccountTriggerHandler.createNewContact(Trigger.new);
+
 }
 }
