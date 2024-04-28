@@ -17,13 +17,15 @@
 * - Trigger Context Variables: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables.htm
 * - Context Variable Considerations: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables_considerations.htm
 * - Get Started with Apex Triggers: https://trailhead.salesforce.com/content/learn/modules/apex_triggers/apex_triggers_intro
-* NOTE: Disable all duplicate rules in the org. This will help prevent errors in the test classes or triggers. https://help.salesforce.com/s/articleView?id=ind.Disable_Account_Duplicate_Rule_CAM_OS_Enabled.htm&type=5
+* NOTE: Disable all duplicate rules in the org. This will help prevent errors in the test classes or trigg*ers. https://help.salesforce.com/s/articleView?id=ind.Disable_Account_Duplicate_Rule_CAM_OS_Enabled.htm&type=5
+* 
+*@author Sean Williams
 */
 @IsTest
 public with sharing class TriggerTest {
 
     /*
-    * Question 1
+    * Question 1 (Before Insert)
     * Account Trigger
     * When an account is inserted change the account type to 'Prospect' if there is no value in the type field.
     * Trigger should only fire on insert.
@@ -73,8 +75,8 @@ public with sharing class TriggerTest {
     }
 
     /*
-    * Question 2
-    * Account Trigger
+    * Question 2 (Before Insert)
+    * Account Trigger 
     * When an account is inserted copy the shipping address to the billing address.
     * BONUS: Check if the shipping fields are empty before copying.
     * Trigger should only fire on insert.
@@ -134,7 +136,7 @@ public with sharing class TriggerTest {
     }
 
     /*
-    * Question 3
+    * Question 3 (Before Insert)
     * Account Trigger
 	* When an account is inserted set the rating to 'Hot' if the Phone, Website, and Fax ALL have a value.
     * Trigger should only fire on insert.
@@ -193,7 +195,7 @@ public with sharing class TriggerTest {
     }
 
     /*
-    * Question 4
+    * Question 4 (After Insert)
     * Account Trigger
     * When an account is inserted create a contact related to the account with the following default values:
     * LastName = 'DefaultContact'
