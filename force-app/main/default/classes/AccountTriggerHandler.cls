@@ -14,18 +14,23 @@ public with sharing class AccountTriggerHandler {
     }
     public static void copyAccountShippingAddress(List<Account> accounts){
 //loop through accounts, checking if the Shipping address is null. If it is not null, then copy the address to the shipping address
-        for(Account acc : accounts){
-            if(acc.ShippingStreet == null || acc.ShippingCity == null || acc.ShippingState == null || acc.ShippingPostalCode == null){
-                continue;
-            }
-            else{
-                acc.BillingStreet = acc.ShippingStreet;
-                acc.BillingCity = acc.ShippingCity;
-                acc.BillingState = acc.ShippingState;
-                acc.BillingPostalCode = acc.ShippingPostalCode;
-                acc.BillingCountry = acc.ShippingCountry;
-            }
-        }
+for (Account acc : accounts) {
+    if (acc.BillingStreet == null && acc.ShippingStreet != null) {
+        acc.BillingStreet = acc.ShippingStreet;
+    }
+    if (acc.BillingCity == null && acc.ShippingCity != null) {
+        acc.BillingCity = acc.ShippingCity;
+    }
+    if (acc.BillingState == null && acc.ShippingState != null) {
+        acc.BillingState = acc.ShippingState;
+    }
+    if (acc.BillingPostalCode == null && acc.ShippingPostalCode != null) {
+        acc.BillingPostalCode = acc.ShippingPostalCode;
+    }
+    if (acc.BillingCountry == null && acc.ShippingCountry != null) {
+        acc.BillingCountry = acc.ShippingCountry;
+    }
+}
     }
    public static void setAccountRating(List<Account> accounts){
     for(Account account : accounts){
